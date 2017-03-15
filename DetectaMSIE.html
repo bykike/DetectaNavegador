@@ -15,6 +15,10 @@
     <p>Qué versión de Internet Explorer?</p> <button onclick="DetectaNavegador()">Detectar</button>    
     <p>Cúal es el Browser?</p> <button onclick="myFunction()">Detectar</button>
     <p>Qué versión de Internet Explorer?</p> <button onclick="checkVersion()">Detectar</button>
+    <p>Detectar sólo Internet Explorer?</p> <button onclick="SoloIE()">Detectar</button>
+    
+    
+    
     <script>
         function DetectaNavegador() {
            var ua = window.navigator.userAgent;
@@ -105,7 +109,16 @@
               }
               alert( msg );
             }
-     </script>       
+     </script> 
+    
+    <script>
+        function SoloIE() { 
+             if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+                {
+                  alert('Está usando el navegador Internet Explorer. Debido a ciertas incompatibilidades le aconsejamos que utilice para este formulario Chrome o Morzilla para un proceso óptimo de los datos que va a suministrar. Gracias.'); 
+                }  
+        }
+    </script>
 
 </body>
 </html>
