@@ -36,7 +36,7 @@
                             var re = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
                             if (re.exec(ua) != null) {
                                 rv = parseFloat(RegExp.$1);
-                                alert("cuidado es una versión " + rv);
+                                alert("Cuidado es una versión " + rv);
                             }
                         }
                         else {
@@ -45,7 +45,7 @@
                     }
                     else {
                         //For < IE11
-                        alert("cuidado es una versión inferior a la 11 " + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+                        alert("Cuidado es una versión inferior a la 11 " + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
                     }
                     return false;
                 }}
