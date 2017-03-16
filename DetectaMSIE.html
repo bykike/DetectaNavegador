@@ -16,6 +16,7 @@
     <p>Cúal es el Browser?</p> <button onclick="myFunction()">Detectar</button>
     <p>Qué versión de Internet Explorer?</p> <button onclick="checkVersion()">Detectar</button>
     <p>Detectar sólo Internet Explorer?</p> <button onclick="SoloIE()">Detectar</button>
+    <p>Detectar Internet Explorer menor version 11?</p> <button onclick="getInternetExplorerVersion()">Detectar</button>
     
     
     
@@ -35,7 +36,7 @@
                             var re = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
                             if (re.exec(ua) != null) {
                                 rv = parseFloat(RegExp.$1);
-                                alert(rv);
+                                alert("cuidado es una versión " + rv);
                             }
                         }
                         else {
@@ -44,7 +45,7 @@
                     }
                     else {
                         //For < IE11
-                        alert(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
+                        alert("cuidado es una versión inferior a la 11 " + parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))));
                     }
                     return false;
                 }}
@@ -118,6 +119,41 @@
                   alert('Está usando el navegador Internet Explorer. Debido a ciertas incompatibilidades le aconsejamos que utilice para este formulario Chrome o Morzilla para un proceso óptimo de los datos que va a suministrar. Gracias.'); 
                 }  
         }
+    </script>
+
+    <script>
+
+           function getInternetExplorerVersion()
+            {
+                var rv = -1; // Return value assumes failure.
+
+                if (navigator.appName == 'Microsoft Internet Explorer')
+                {
+                    var ua = navigator.userAgent;
+                    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+                    if (re.exec(ua) != null)
+                        rv = parseFloat( RegExp.$1 );
+                }
+
+                return rv;
+            }
+
+            function checkVersion()
+            {
+                var msg = "You're not using Internet Explorer.";
+                var ver = getInternetExplorerVersion();
+
+                if ( ver > -1 )
+                {
+                    if ( ver >= 8.0 ) 
+                        msg = "You're using a recent copy of Internet Explorer."
+                    else
+                        msg = "You should upgrade your copy of Internet Explorer.";
+                }
+
+                alert( msg );
+            }
+
     </script>
 
 </body>
