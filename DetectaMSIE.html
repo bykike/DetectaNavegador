@@ -12,11 +12,11 @@
     
 <body>
     
-    <p>Qué versión de Internet Explorer se está usando?</p> <button onclick="DetectaNavegador()">Detectar</button>    
-    <p>Cúal es el Browser que se está usando?</p> <button onclick="myFunction()">Detectar</button>
-    <p>Qué versión de Internet Explorer es el que se está usando?</p> <button onclick="checkVersion()">Detectar</button>
-    <p>Detectar sólo Internet Explorer?</p> <button onclick="SoloIE()">Detectar</button>
-    <p>Detectar Internet Explorer menor a la versión 11?</p> <button onclick="getInternetExplorerVersion()">Detectar</button>
+    <p>¿Qué versión de Internet Explorer se está usando?</p> <button onclick="DetectaNavegador()">Detectar</button>    
+    <p>¿Cúal es el Browser que se está usando?</p> <button onclick="myFunction()">Detectar</button>
+    <p>¿Qué versión de Internet Explorer es el que se está usando?</p> <button onclick="checkVersion()">Detectar</button>
+    <p>¿Detectar sólo Internet Explorer?</p> <button onclick="SoloIE()">Detectar</button>
+    <p>¿Detectar Internet Explorer menor a la versión 11?</p> <button onclick="getInternetExplorerVersion()">Detectar</button>
     
     
     
@@ -26,7 +26,7 @@
                 var msie = ua.indexOf("MSIE ");
                 var rv = -1;
 
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, Devuelve en número de versión
                 {               
 
                     if (isNaN(parseInt(ua.substring(msie + 5, ua.indexOf(".", msie))))) {
@@ -83,8 +83,8 @@
     
     <script>
             function getInternetExplorerVersion()
-            // Returns the version of Internet Explorer or a -1
-            // (indicating the use of another browser).
+            // Devuelve la versión de Internet Explorer o un -1
+            // (indicando el uso de otro navegador).
             {
               var rv = -1; // Return value assumes failure.
               if (navigator.appName == 'Microsoft Internet Explorer')
